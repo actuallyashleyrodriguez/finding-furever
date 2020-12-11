@@ -4,6 +4,7 @@ class PetsController < ApplicationController
 
     def new
         @pet = Pet.new
+        @shelters = Shelter.all
     end
 
     def create

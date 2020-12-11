@@ -8,5 +8,7 @@
     <%= f.text_field :type%> <br><br>
     <label> Breed</label>
     <%= f.text_field :breed%> <br><br>
+    <label>Choose your shelter</label>
+    <%= f.collection_select :name, @shelters, :name, :name %>
     <%= f.submit %>
 <%end%>
