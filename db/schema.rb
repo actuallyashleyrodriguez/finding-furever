@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_105714) do
     t.integer "age"
     t.string "type"
     t.string "breed"
+    t.integer "shelter_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
