@@ -18,6 +18,14 @@ class PetsController < ApplicationController
 
     def show
     end
+    
+    def edit
+        if @pet.update(pet_params)
+            redirect_to @pet
+        else
+            render :edit
+        end
+    end
 
     private
 

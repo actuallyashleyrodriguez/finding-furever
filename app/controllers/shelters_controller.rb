@@ -17,6 +17,14 @@ class SheltersController < ApplicationController
     def show
     end
 
+    def edit
+        if @shelter.update(shelter_params)
+            redirect_to @shelter
+        else
+            render :edit
+        end
+    end
+
     private
 
     def set_shelter

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :admins
   resources :applications
   resources :pets
   resources :shelters
