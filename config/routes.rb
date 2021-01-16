@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   get '/' => 'sessions#index'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  #get "/admin_login", to: 'sessions#admin_new'
+  #post "/admin_login", to: 'sessions#admin_new'
   resources :admins
   resources :applications
   resources :pets
