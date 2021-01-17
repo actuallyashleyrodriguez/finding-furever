@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <%= link_to login_path %> 
+      </nav>
+    </header>
     <%= yield %>
+    <footer>
+      <%= link_to logout_path %>
+    </footer>
   </body>
 </html>
