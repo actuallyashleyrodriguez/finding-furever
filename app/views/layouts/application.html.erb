@@ -12,12 +12,12 @@
   <body>
     <header>
       <nav>
-        <%= link_to login_path %> 
+        <%= link_to "Log in", login_path %> 
       </nav>
     </header>
     <%= yield %>
     <footer>
-      <%= link_to logout_path %>
+      <%= link_to "Logout", logout_path, method: :delete %>
     </footer>
   </body>
 </html>
