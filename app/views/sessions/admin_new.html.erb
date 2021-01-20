@@ -1,0 +1,9 @@
+<h1>Login For Shelter Administrators! </h1>
+
+<%= form_for(:admin) do |f| %>
+    <label> Email </label>
+    <%= f.text_field :email %> <br><br>
+    <label> Password </label>
+    <%= f.password_field :password %> <br><br>
+    <%= f.submit "Log in" %>
+<%end%>

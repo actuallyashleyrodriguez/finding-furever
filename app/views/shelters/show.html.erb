@@ -2,7 +2,7 @@
 <h3><%=@shelter.address%></h3>
 <h3><%=@shelter.phone_number%></h3>
 <h3><%= @shelter.each do |pet|%>
-    <%= pet.name%>
+    <%= link_to "pet.name", pet_path(pet)%>
     <%= pet.type %>
 <%= end%>
 
