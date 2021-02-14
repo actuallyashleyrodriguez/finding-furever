@@ -8,7 +8,10 @@ class PetsController < ApplicationController
     end
 
     def create
-        @pet = Pet.new(pet_params)
+        #change this from .new to .build to create automatic associations
+        #create new pet if shelter already exists
+        @shelter = shelter_name=(params[:pet][:shelter_name]) #change view to datalist view
+        @pet = @shetler.pets.build(pet_params)
         if @pet.save
             redirect_to @pet
         else
