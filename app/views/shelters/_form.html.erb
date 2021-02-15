@@ -5,5 +5,16 @@
     <%= f.text_field :address %> <br><br>
     <label> Phone Number </label>
     <%= f.text_field :phone_number %> <br><br>
+    <label><h4> Add your First Pet! </h4></label>
+    <%= f.fields_for :pets do |pet| %>
+        <%= pet.label :name %>
+        <%= pet.text_field :name %><br>
+        <%= pet.label :age %>
+        <%= pet.number_field :age %><br>
+        <%= pet.label :animal_type %>
+        <%= pet.text_field :animal_type %><br>
+        <%= pet.label :breed %>
+        <%= pet.text_field :breed %><br><br>
+    <% end %>
     <%= f.submit %>
 <%end%>

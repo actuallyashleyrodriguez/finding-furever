@@ -3,6 +3,7 @@ class SheltersController < ApplicationController
 
     def new
         @shelter = Shelter.new
+        @shelter.pets.build
     end
 
     def create
@@ -34,6 +35,8 @@ class SheltersController < ApplicationController
     end
 
     def shelter_params
-        params.require(:shelter).permit!
+        params.require(:shelter).permit(:name, :address, :phone_number, pet_attributes: [
+            :name, :age, :animal_type, :breed
+        ] )
     end
 end

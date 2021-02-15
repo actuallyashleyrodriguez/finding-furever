@@ -8,6 +8,11 @@
     <label> Breed</label>
     <%= f.text_field :breed%> <br><br>
     <label>Choose your Shelter</label>
-    <%= f.collection_select :shelter_name, @shelters, :name, :name %>
+    <%= f.text_field :shelter_name, list: "shelters_autocomplete" %>
+    <datalist id="shelters_autocomplete">
+        <% Shelter.all.each do |shelter| %>
+            <option value="<%=shelter.name%>">
+        <%end %>
+    </datalist>
     <%= f.submit %>
 <%end%>
