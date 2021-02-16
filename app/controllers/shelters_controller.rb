@@ -35,7 +35,7 @@ class SheltersController < ApplicationController
     end
 
     def shelter_params
-        params.require(:shelter).permit(:name, :address, :phone_number, pet_attributes: [
+        params.require(:shelter).permit(:name, :address, :phone_number, :admin_id pet_attributes: [
             :name, :age, :animal_type, :breed
         ] )
     end
