@@ -1,10 +1,11 @@
-<h1><%=@shelter.name%></h1>
+<h1><%=@shelter.name%>- Run by <%=@shelter.admin.name%></h1>
 <h3><%=@shelter.address%></h3>
 <h3><%=@shelter.phone_number%></h3>
 <h3><%= @shelter.each do |pet|%>
     <%= link_to "pet.name", pet_path(pet)%>
     <%= pet.type %>
 <%= end%>
+
 
 <h2>Create a new Pet</h2>
 
