@@ -2,24 +2,25 @@ class SheltersController < ApplicationController
     before_action :set_shelter, only: [:show, :edit, :update]
 
     def new
-        @admin= Admin.find_by_id(params[:admin_id])
-        @shelter = @admin.shelters.build
+        @shelter = Shelter.new
         @shelter.pets.build
     end
 
     def create
         #change this from .new to .build to create automatic associations
         #create new shelter if admin already exists
-        @shelter = Shelter.new(shelter_params)
-        @shelter.admin_id = session[:admin_id]
+        @admin = Admin.find_by_id(session[:admin_id])
+        @shelter = @admin.shelters.build(shelter_params)
         if @shelter.save
             redirect_to @shelter
         else
+            flash[:errors] = @shelter.errors.full_messages
             render :new
         end
     end
 
     def show
+
     end
 
     def edit
