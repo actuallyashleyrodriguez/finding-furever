@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   get "/admin_login", to: 'sessions#admin_new'
   post "/admin_login", to: 'sessions#admin_create'
   #post '/signout'. to: 'sessions#signout'
-  resources :admins do
-    resources :shelters
-  end
+  resources :admins
   resources :applications
   resources :pets
   resources :shelters

@@ -1,5 +1,7 @@
 <h1> Welcome <%= @admin.name %></h1>
 
-<h3><%= link_to "View Your Shelters", admin_shelters_path %><h3>
+<% @admin.shelters.each do |s| %>
+    <%= s.name %>
+<%end%>
 
-<h3><%= link_to "Register a new Shelter", new_admin_shelter_path %></h3>
+<h3><%= link_to "Register a new Shelter", new_shelter_path %></h3>
