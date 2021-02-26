@@ -10,8 +10,7 @@ class PetsController < ApplicationController
     def create
         #change this from .new to .build to create automatic associations
         #create new pet if shelter already exists
-        @shelter = Shelter.find_by_id(params[:shelter_id])
-        @pet = @shelter.pets.build(pet_params)
+        @pet = Pet.new(pet_params)
         if @pet.save
             redirect_to @pet
         else
