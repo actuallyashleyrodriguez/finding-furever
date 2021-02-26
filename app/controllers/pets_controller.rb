@@ -3,15 +3,15 @@ class PetsController < ApplicationController
     before_action :set_pet, only: [:show, :edit, :update]
 
     def new
-        @pet = Pet.new
-        @shelters = Shelter.all
+        @shelter = Shelter.find_by_id(params[:shelter_id])
+        @pet = @shelter.pets.build
     end
 
     def create
         #change this from .new to .build to create automatic associations
         #create new pet if shelter already exists
-        @shelter = shelter_name=(params[:pet][:shelter_name]) #change view to datalist view
-        @pet = @shetler.pets.build(pet_params)
+        @shelter = Shelter.find_by_id(params[:shelter_id])
+        @pet = @shelter.pets.build(pet_params)
         if @pet.save
             redirect_to @pet
         else
@@ -37,6 +37,6 @@ class PetsController < ApplicationController
     end
 
     def pet_params
-        params.require(:pet).permit(:name, :shelter_name, :breed, :animal_type, :age)
+        params.require(:pet).permit(:name, :shelter_id, :breed, :animal_type, :age)
     end
 end
