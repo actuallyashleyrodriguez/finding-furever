@@ -29,6 +29,14 @@ class PetsController < ApplicationController
         end
     end
 
+    def index 
+        if @shelter = Shelter.find_by_id(params[:shelter_id])
+            @pets = @shelter.pets
+        else
+            @pets = Pets.all
+        end
+    end
+
     private
 
     def set_pet
@@ -36,6 +44,6 @@ class PetsController < ApplicationController
     end
 
     def pet_params
-        params.require(:pet).permit(:name, :shelter_id, :breed, :animal_type, :age)
+        params.require(:pet).permit!
     end
 end

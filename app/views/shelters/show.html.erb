@@ -1,16 +1,8 @@
 <h1><%=@shelter.name%>- Run by <%=@shelter.admin.name%></h1>
 <h3><%=@shelter.address%></h3>
 <h3><%=@shelter.phone_number%></h3>
-<ul>
-<% @shelter.pets.each do |pet|%>
-    <li><h4><%= link_to pet.name, pet_path(pet)%></h4>
-    <ul>
-    <li><%= pet.animal_type %></li>
-    <li><%= pet.breed %></li>
-    </ul>
-    </li>
-<% end %>
-</ul>
+<h3><%= link_to "Click here to view the Pets available for adoption", shelter_pets_path(@shelter.id) %></h3>
+
 
 <h2>Create a new Pet</h2>
 
