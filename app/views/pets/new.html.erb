@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/errors', locals: {object: @pet} %>
+
 <h1> List a new pet at <%= @shelter.name %></h1>
 <%= form_for(@pet) do |f| %>
     <label> Name </label>

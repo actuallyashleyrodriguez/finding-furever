@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/errors', locals: {object: @admin} %>
+
 <h1>Create an Admin account </h1>
 <%= render 'form' %>
 <p> Already have an account? <%= link_to "Login", admin_login_path %> instead</p>

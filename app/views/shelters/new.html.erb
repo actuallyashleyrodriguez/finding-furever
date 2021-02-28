@@ -1,8 +1,4 @@
-<% if !!flash[:errors] %>
-2  <% flash[:errors].each do |e| %>
-3    <p><%= e %></p> <br>
-4    <% end %>
-5  <% end %>
+<%= render partial: 'layouts/errors', locals: {object: @shelter} %>
 
 <h1>Register a New Shelter</h1>
 

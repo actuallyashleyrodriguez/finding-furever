@@ -12,7 +12,6 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to @user
         else
-            flash[:error]
             render :new
         end
     end
