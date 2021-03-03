@@ -4,6 +4,7 @@ class Pet < ApplicationRecord
     belongs_to :shelter
     validates :name, :animal_type, :breed, presence: true
 
+    scope :filter_animal, ->(type) { where('animal_type = ?', type) }
     #def shelter_name=(name)
      ##   shelter = Shelter.find_or_create_by(name: name)
      #   self.shelter = shelter

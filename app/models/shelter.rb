@@ -8,7 +8,5 @@ class Shelter < ApplicationRecord
     validates :name, presence: true
     validates :address, uniqueness: true, presence: true
 
-    def admin_only
-        session[:admin_id]
-    end
+    
 end

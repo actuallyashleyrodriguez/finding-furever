@@ -24,6 +24,9 @@ class SheltersController < ApplicationController
     end
 
     def edit
+    end
+
+    def update
         if @shelter.update(shelter_params)
             redirect_to @shelter
         else
