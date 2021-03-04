@@ -3,7 +3,7 @@ class PetsController < ApplicationController
     before_action :set_pet, only: [:show, :edit, :update]
 
     def new
-        @shelter = Shelter.find_by_id(params[:shelter_id])
+        set_shelter
         @pet = @shelter.pets.build
     end
 
@@ -30,10 +30,18 @@ class PetsController < ApplicationController
     end
 
     def index 
-        if @shelter = Shelter.find_by_id(params[:shelter_id])
+        if set_shelter
             @pets = @shelter.pets
         else
             @pets = Pets.all
+        end
+    end
+
+    def dogs
+        if set_shelter
+            @pets = @shelter.pets.filter_dog
+        else
+            @pets = Pet.all.filter_dog
         end
     end
 
@@ -45,5 +53,9 @@ class PetsController < ApplicationController
 
     def pet_params
         params.require(:pet).permit!
+    end
+
+    def set_shelter
+        @shelter = Shelter.find_by_id(params[:shelter_id])
     end
 end
