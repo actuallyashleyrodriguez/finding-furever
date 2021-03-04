@@ -1,0 +1,12 @@
+<h1> View Cats only </h1>
+<ul>
+<% @pets.each do |pet|%>
+    <li><h4><%= link_to pet.name, pet_path(pet)%></h4>
+    <ul>
+    <li><%= pet.age %></li>
+    <li><%= pet.breed %></li>
+    <li><%= pet.shelter.name if !@shelter%> </li> 
+    </ul>
+    </li>
+<% end %>
+</ul>

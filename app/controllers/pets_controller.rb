@@ -44,6 +44,13 @@ class PetsController < ApplicationController
             @pets = Pet.all.filter_dog
         end
     end
+    def cats
+        if set_shelter
+            @pets = @shelter.pets.filter_cat
+        else
+            @pets = Pet.all.filter_cat
+        end
+    end
 
     private
 

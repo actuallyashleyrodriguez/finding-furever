@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #post '/signout'. to: 'sessions#signout'
 
   get '/pets/dogs' => 'pets#dogs'
+  get '/pets/cats' => 'pets#cats'
 
   resources :admins
   resources :applications
