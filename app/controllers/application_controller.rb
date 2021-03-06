@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     #before_action :require_login
-    helper_method :validation_check, :current_admin
+    helper_method :validation_check, :current_admin, :current_user
 
     private
 

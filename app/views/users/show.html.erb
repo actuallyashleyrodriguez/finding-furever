@@ -1,5 +1,20 @@
 <h1> Welcome <%=@user.name%></h1>
 
-<h3><%= link_to "View Shelters", shelters_path %> </h3>
+<h3><%= link_to "View Shelters", shelters_path %> / 
+<%= link_to "Filter by Dogs", pets_dogs_path %> /
+<%= link_to "Filter by Cats", pets_cats_path %> </h3?>
+
 
 <h3>Current Applications </h3>
+
+<% @user.applications.each do |app| %>
+    <ul>
+    <li>Pet: <%= app.pet.name %>
+    <ul>
+    <li>Shelter: <%= app.pet.shelter.name %></li>
+    <li>Submitted: <%= app.created_at.strftime("%A, %b %e, at %l:%M %p") %></li>
+    <li> <%= button_to "Delete this Application", application_path(app), method: :delete %></li>
+    </ul>
+    </li>
+    </ul>
+    <% end %>

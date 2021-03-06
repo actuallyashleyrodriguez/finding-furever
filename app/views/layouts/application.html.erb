@@ -12,12 +12,14 @@
   <body>
     <header>
       <nav>
-        <%= link_to "Log in", login_path %> 
+        <%= link_to "Shelters", shelters_path %> | 
+        <%= link_to "All Pets", pets_path %> |
+        <%= link_to "Submit an Application", new_application_path %>
       </nav>
     </header>
     <%= yield %>
     <footer>
-      <%= link_to "Logout", logout_path, method: :delete %>
+      <%= link_to "Logout", logout_path, method: :delete%>
     </footer>
   </body>
 </html>

@@ -29,7 +29,7 @@ class PetsController < ApplicationController
         if set_shelter
             @pets = @shelter.pets
         else
-            @pets = Pets.all
+            @pets = Pet.all
         end
     end
 

@@ -14,9 +14,16 @@ class ApplicationsController < ApplicationController
         @app = Application.find(params[:id])
     end
 
+    def destroy
+        Application.find(params[:id]).destroy
+        redirect_to current_user if current_user
+        redirect_to current_admin if current_admin
+    end
+
 
     private
     def app_params
         params.require(:application).permit(:user_id, :pet_name, :vet)
     end
+
 end
