@@ -7,8 +7,6 @@ class SheltersController < ApplicationController
     end
 
     def create
-        #change this from .new to .build to create automatic associations
-        #create new shelter if admin already exists
         @admin = Admin.find_by_id(session[:admin_id])
         @shelter = @admin.shelters.build(shelter_params)
         if @shelter.save

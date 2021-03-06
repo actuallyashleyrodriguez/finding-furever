@@ -1,1 +1,9 @@
 <h1>Application for Adoption</h1>
+<%= form_for(@app) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :user_id, value: @user.name %>
+    <%= f.collection_select :pet_name, Pet.all, :name, :name %>
+    <%= f.label :vet %>
+    <%= f.text_field :vet %>
+    <%= f.submit %>
+<% end %>
