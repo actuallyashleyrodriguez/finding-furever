@@ -1,6 +1,8 @@
 
 
 <% @shelter.each do |s| %>
-    <%= s.name %>
-    <%= s.address %>
+    <ul>
+    <li><%= link_to s.name, shelter_path(s) %></li>
+    <li><%= s.address %></li>
+    </ul>
 <%end%>
