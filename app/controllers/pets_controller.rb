@@ -11,11 +11,7 @@ class PetsController < ApplicationController
         #change this from .new to .build to create automatic associations
         #create new pet if shelter already exists
         @pet = Pet.new(pet_params)
-        if @pet.save
-            redirect_to @pet
-        else
-            render :new
-        end
+        validation_check(@pet)
     end
 
     def show

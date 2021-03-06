@@ -7,11 +7,7 @@ class ApplicationsController < ApplicationController
     def create
         @user = User.find_by_id(session[:user_id])
         @app = @user.applications.build(app_params)
-        if @app.save
-            redirect_to @app
-        else
-            render :new
-        end
+        validation_check(@app)
     end
 
     def show
