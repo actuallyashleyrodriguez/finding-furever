@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/admin_login", to: 'sessions#admin_new'
   post "/admin_login", to: 'sessions#admin_create'
   #post '/signout'. to: 'sessions#signout'
+  get '/auth/github/callback' => 'sessions#omniauth'
 
   get '/pets/dogs' => 'pets#dogs'
   get '/pets/cats' => 'pets#cats'
