@@ -18,6 +18,10 @@ class PetsController < ApplicationController
     end
     
     def edit
+        
+    end
+
+    def update
         if @pet.update(pet_params)
             redirect_to @pet
         else
