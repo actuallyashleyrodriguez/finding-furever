@@ -1,5 +1,6 @@
 <h1> View the Pets </h1>
-
+<%= link_to "Click here to filter by dogs", pets_dogs_path %>
+<%= link_to "Click here to filter by cats", pets_cats_path %>
 <ul>
 <% @pets.each do |pet|%>
     <li><h4><%= link_to pet.name, pet_path(pet)%></h4>

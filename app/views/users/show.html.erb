@@ -12,7 +12,7 @@
     <li>Pet: <%= app.pet.name %>
     <ul>
     <li>Shelter: <%= app.pet.shelter.name %></li>
-    <li>Submitted: <%= app.created_at.strftime("%A, %b %e, at %l:%M %p") %></li>
+    <li>Submitted: <%= app_created app %></li>
     <li> <%= button_to "Delete this Application", application_path(app), method: :delete %></li>
     </ul>
     </li>
