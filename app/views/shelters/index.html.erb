@@ -1,8 +1,11 @@
+<h1>View Current Shelters </h1>
+<p>Click on a shelter to view their pets available for adoption</p>
 
-
+<div class="shelterind">
 <% @shelter.each do |s| %>
     <ul>
-    <li><%= link_to s.name, shelter_path(s) %></li>
-    <li><%= s.address %></li>
+    <li><%= link_to s.name, shelter_path(s) %><br>
+    <%= s.address %></li>
     </ul>
 <%end%>
+</div>

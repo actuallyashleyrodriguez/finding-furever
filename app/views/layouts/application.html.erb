@@ -12,12 +12,18 @@
   <body>
     <header>
       <nav>
-        <%= link_to "Shelters", shelters_path %> | 
-        <%= link_to "All Pets", pets_path %> |
+        <span class="navCont">
+        <%= link_to "Homepage", user_path(session[:user_id]) %> 
+        <span class="navCont">
+        <%= link_to "Shelters", shelters_path %>  
+        <span class="navCont">
+        <%= link_to "All Pets", pets_path %> 
+        <span class="navCont">
         <%= link_to "Submit an Application", new_application_path %>
+        </span>
       </nav>
     </header>
-    <div class='container'>
+    <div class="container">
     <%= yield %>
     </div>
     <footer>

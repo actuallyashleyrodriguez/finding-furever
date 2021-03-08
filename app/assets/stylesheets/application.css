@@ -22,14 +22,15 @@
     height: 100px;
 }
 
-span.petsHeader {
-    padding-left: 30px;
-}
-
 .indexPets ul li{
     width: 33%;
     float: left;
     list-style: none;
   }
+
+span.navCont, footer, h1, span.petsHeader {
+    padding-left: 30px;
+}
+
 
    
