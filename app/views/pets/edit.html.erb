@@ -1,2 +1,4 @@
+<% if current_admin == @pet.shelter.admin%>
 <h1> Edit <%=@pet.name%></h1>
 <%= render 'form' %>
+<%end%>

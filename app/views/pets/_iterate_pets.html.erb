@@ -1,13 +1,11 @@
 <div class="indexPets">
 <ul>
 <% @pets.each do |pet|%>
-    <li><%= image_tag(pet.image_url)%>
-    <ul>
-    <li><%= link_to pet.name, pet_path(pet) %>
-    <li>Age: <%= pet.age %></li>
-    <li>Breed: <%= pet.breed %></li>
-    <li>Shelter: <%= pet.shelter.name %></li>
-    </ul>
+    <li><%= link_to image_tag(pet.image_url), pet_path(pet)%> <br>
+    Name: <%= pet.name %> <br>
+    Age: <%= pet.age %> <br>
+    Breed: <%= pet.breed %> <br>
+    Shelter: <%= pet.shelter.name %>
     </li>
     <br>
 <% end %>

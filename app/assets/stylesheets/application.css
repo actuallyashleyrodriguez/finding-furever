@@ -23,6 +23,13 @@
 }
 
 span.petsHeader {
-    padding-left: 50px;
+    padding-left: 30px;
 }
+
+.indexPets ul li{
+    width: 33%;
+    float: left;
+    list-style: none;
+  }
+
    

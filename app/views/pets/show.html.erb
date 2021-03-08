@@ -8,4 +8,4 @@
 
 <p>Interested in <%= @pet.name %>? <br>
 Fill out an <%= link_to "application", new_application_path %> with <%= @pet.shelter.name%> to set up your initial meet and greet!</p>
-<p><%= @pet.name %> has <%= pluralize(@pet.applications.count, "application") %> pending %>
+<p><%= @pet.name %> has <%= pluralize(@pet.applications.count, "application") %> pending </p>
