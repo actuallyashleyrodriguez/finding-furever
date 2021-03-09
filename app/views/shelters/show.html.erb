@@ -1,14 +1,14 @@
 <h1><%=@shelter.name%>- Run by <%=@shelter.admin.name%></h1>
-<h3><%=@shelter.address%></h3>
-<h3><%=@shelter.phone_number%></h3>
-<h3><%= link_to "Click here to view the Pets available for adoption", shelter_pets_path(@shelter.id) %></h3>
+<h5><%=@shelter.address%></h5>
+<h5><%=@shelter.phone_number%></h5>
+<h5><%= link_to "Click here to view the Pets available for adoption", shelter_pets_path(@shelter.id) %> <br> <br></h5>
 
 <% if current_admin == @shelter.admin%>
-<h1> Manage your Shelter </h1>
+<h3> Manage your Shelter </h3>
 </ul>
-<h4><li><%= link_to "Create a new Pet", new_shelter_pet_path(@shelter) %></li></h4>
-<h4><li><%= link_to "Edit your Shelter", edit_shelter_path(@shelter) %></li></h4>
-<h4><%= button_to "Delete this Shelter", shelter_path(@shelter), method: :delete %></h4>
+<h5><li><%= link_to "Create a new Pet", new_shelter_pet_path(@shelter) %></li></h5>
+<h5><li><%= link_to "Edit your Shelter", edit_shelter_path(@shelter) %></li></h5>
+<h5><%= button_to "Delete this Shelter", shelter_path(@shelter), method: :delete %></h5>
 </ul>
 
 
