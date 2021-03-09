@@ -4,4 +4,4 @@
     Vet: <%= @app.vet%><br>
     Submitted: <%= app_created @app %><p>
 
-<%= button_to "Delete this Application", application_path(app), method: :delete %>
+<%= button_to "Delete this Application", application_path(@app), method: :delete %>

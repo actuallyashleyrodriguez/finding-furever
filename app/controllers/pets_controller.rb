@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
 
  before_action :set_pet, only: [:show, :edit, :update]
+ before_action :require_login
 
     def new
         set_shelter

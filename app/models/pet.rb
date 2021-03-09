@@ -2,7 +2,7 @@ class Pet < ApplicationRecord
     has_many :applications
     has_many :users, through: :applications
     belongs_to :shelter
-    validates :name, :animal_type, :breed, presence: true
+    validates :name, :animal_type, :breed, :image_url, presence: true
 
     scope :filter_dog, ->{where(animal_type: 'Dog').order(:name) }
     scope :filter_cat, ->{where(animal_type: 'Cat').order(:name) }

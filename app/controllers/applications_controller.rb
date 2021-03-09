@@ -1,4 +1,5 @@
 class ApplicationsController < ApplicationController
+    before_action :require_login
     def new
         @user = User.find_by_id(session[:user_id])
         @app = Application.new

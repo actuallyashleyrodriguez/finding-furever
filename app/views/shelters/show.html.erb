@@ -2,6 +2,7 @@
 <h5><%=@shelter.address%></h5>
 <h5><%=@shelter.phone_number%></h5>
 <h5><%= link_to "Click here to view the Pets available for adoption", shelter_pets_path(@shelter.id) %> <br> <br></h5>
+<%= render 'layouts/border'%>
 
 <% if current_admin == @shelter.admin%>
 <h3> Manage your Shelter </h3>

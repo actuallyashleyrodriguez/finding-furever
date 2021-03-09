@@ -9,6 +9,7 @@
 Fill out an <%= link_to "application", new_application_path %> with <%= @pet.shelter.name%> to set up your initial meet and greet!</p>
 <p><%= @pet.name %> has <%= pluralize(@pet.applications.count, "application") %> pending <br><br></p>
 
+
 <% if current_admin == @pet.shelter.admin %>
 <h3> Admin Controls </h3>
 <%= link_to "Edit this Pet" , edit_pet_path(@pet)%><br> <br>or <br><br>

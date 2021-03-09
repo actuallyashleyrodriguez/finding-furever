@@ -1,5 +1,6 @@
 class SheltersController < ApplicationController
     before_action :set_shelter, only: [:show, :edit, :update]
+    before_action :require_login
 
     def new
         @shelter = Shelter.new
@@ -44,7 +45,7 @@ class SheltersController < ApplicationController
 
     def shelter_params
         params.require(:shelter).permit(:name, :address, :phone_number, :admin_id, pets_attributes: [
-            :name, :age, :animal_type, :breed
+            :name, :age, :animal_type, :breed, :image_url
         ] )
     end
 end

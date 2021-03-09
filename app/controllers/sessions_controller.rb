@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
 
-    skip_before_action :require_login
 
     def index
     end
@@ -48,6 +47,7 @@ class SessionsController < ApplicationController
      end
      user.name = auth['info']['name']
      user.save
+     session[:user_id] = user.id
      redirect_to user
     end
 

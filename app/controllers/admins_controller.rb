@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
 
     before_action :set_admin, only: [:show, :edit, :update]
+    before_action :require_login
 
     def new
         @admin = Admin.new
