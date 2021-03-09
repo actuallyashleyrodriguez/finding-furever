@@ -32,5 +32,11 @@ span.navCont, footer, h1, span.petsHeader {
     padding-left: 30px;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 
    

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     before_action :require_login
-    helper_method :validation_check, :current_admin, :current_user
+    helper_method :validation_check, :current_admin, :current_user, :logged_in?
 
     private
 
@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        redirect_to '/' if !logged_in?
+        flash[:message] = "You must be logged in to view this page"
+        redirect_to login_path if !logged_in?
     end
 
     def validation_check(object)

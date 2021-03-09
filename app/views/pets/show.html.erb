@@ -7,9 +7,21 @@
 
 <p>Interested in <%= @pet.name %>? <br>
 Fill out an <%= link_to "application", new_application_path %> with <%= @pet.shelter.name%> to set up your initial meet and greet!</p>
-<p><%= @pet.name %> has <%= pluralize(@pet.applications.count, "application") %> pending </p>
+<p><%= @pet.name %> has <%= pluralize(@pet.applications.count, "application") %> pending <br><br></p>
 
-<p><% if current_admin == @pet.shelter.admin %>
-Was <%= @pet.name %> Adopted? <%= button_to "Delete this Pet", pet_path(@pet), method: :delete %>
+<% if current_admin == @pet.shelter.admin %>
+<h3> Admin Controls </h3>
+<%= link_to "Edit this Pet" , edit_pet_path(@pet)%><br> <br>or <br><br>
+<%= button_to "Delete this Pet", pet_path(@pet), method: :delete %><br>
+<h3> Open Applications for <%=@pet.name%> </h3>
+<ul>
+<% @pet.applications.each do |app| %>
+    <li>Applicant: <%= app.user.name%><br>
+    Email: <%= app.user.email%><br>
+    Vet: <%= app.vet%><br>
+    Submitted: <%= app_created app %></li>
+    <%= button_to "Delete this application", application_path(app), method: :delete %><br>
 <% end %>
-</p>
+</ul>
+<% end %>
+

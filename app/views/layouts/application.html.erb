@@ -7,27 +7,38 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('finding-furever.jpg') %>
+  
   </head>
 
   <body>
     <header>
       <nav>
         <span class="navCont">
-        <%= link_to "Homepage", user_path(session[:user_id]) %> 
+        <%= link_to "Homepage", user_path(session[:user_id]) if current_user%> 
         <span class="navCont">
-        <%= link_to "Shelters", shelters_path %>  
+        <%= link_to "Homepage", admin_path(session[:admin_id]) if current_admin%> 
         <span class="navCont">
-        <%= link_to "All Pets", pets_path %> 
+        <%= link_to "Login", login_path if !logged_in?%> 
         <span class="navCont">
-        <%= link_to "Submit an Application", new_application_path %>
+        <%= link_to "Admin Login", admin_login_path if !logged_in?%>
+        <span class="navCont">
+        <%= link_to "Shelters", shelters_path if logged_in?%>  
+        <span class="navCont">
+        <%= link_to "All Pets", pets_path if logged_in?%> 
+        <span class="navCont">
+        <%= link_to "Submit an Application", new_application_path if current_user%>
         </span>
       </nav>
     </header>
     <div class="container">
     <%= yield %>
     </div>
+
+    
     <footer>
       <%= link_to "Logout", logout_path, method: :delete%>
     </footer>
+    
   </body>
 </html>
