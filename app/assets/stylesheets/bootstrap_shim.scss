@@ -2,4 +2,9 @@ $primary: #007373;
 
 @import "bootstrap";
 h1, p, h3, h5, li {
-    color: #CCABD8;}
+    color: #CCABD8;
+}
+nav {
+        margin-bottom: 0;
+        background: #CCABD8;
+}

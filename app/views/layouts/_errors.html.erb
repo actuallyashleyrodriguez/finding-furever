@@ -1,11 +1,13 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
-    <h2>You have <%= pluralize(object.errors.count, "error") %> :</h2>
+    <h4>You have <%= pluralize(object.errors.count, "error") %> preventing this from saving:</h4>
 
     <ul>
+    <div class="fields_with_errors">
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
+      </div>
     </ul>
   </div>
 <% end %>

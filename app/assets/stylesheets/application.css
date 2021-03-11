@@ -43,5 +43,17 @@ h1 {
     padding-top: 30px;
 }
 
+.flash {
+    color: red;
+    padding-top: 20px;
+}
+
+.fields_with_errors li {
+    color: red;
+}
+
+#error_explanation {
+    padding-top: 20px;
+}
 
    

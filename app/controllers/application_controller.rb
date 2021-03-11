@@ -18,7 +18,10 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        redirect_to login_path if !logged_in?
+        if !logged_in?
+            flash[:message] = "You must be logged in to view this page!"
+            redirect_to login_path 
+        end
     end
 
     def validation_check(object)
