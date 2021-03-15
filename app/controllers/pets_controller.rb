@@ -39,18 +39,10 @@ class PetsController < ApplicationController
     end
 
     def dogs
-        if set_shelter
-            @pets = @shelter.pets.filter_dog
-        else
-            @pets = Pet.all.filter_dog
-        end
+            @pets = Pet.all.filter_dog.younger_age
     end
     def cats
-        if set_shelter
-            @pets = @shelter.pets.filter_cat
-        else
-            @pets = Pet.all.filter_cat
-        end
+            @pets = Pet.all.filter_cat.younger_age
     end
 
     private

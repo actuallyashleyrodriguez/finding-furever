@@ -6,6 +6,7 @@ class Pet < ApplicationRecord
 
     scope :filter_dog, ->{where(animal_type: 'Dog').order(:name) }
     scope :filter_cat, ->{where(animal_type: 'Cat').order(:name) }
+    scope :younger_age, ->{where("age < 5")}
 
     #def shelter_name=(name)
      ##   shelter = Shelter.find_or_create_by(name: name)

@@ -1,8 +1,8 @@
 
 <div><h1> View the Pets </h1></div>
 <span class="petsHeader">
-<%= link_to "Click here to filter by dogs", pets_dogs_path if !@shelter%> </span> 
+<%= link_to "Click here to filter by Dogs under 5", pets_dogs_path if !@shelter%> </span> 
 <span class="petsHeader">
-<%= link_to "Click here to filter by cats", pets_cats_path if !@shelter%></p>
+<%= link_to "Click here to filter by Cats under 5", pets_cats_path if !@shelter%></p>
 </span>
 <%= render 'iterate_pets' %>
